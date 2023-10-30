@@ -63,6 +63,7 @@ function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
             >
               <a
                 id='tweet-quote' // User Story #5
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent()}`}
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
