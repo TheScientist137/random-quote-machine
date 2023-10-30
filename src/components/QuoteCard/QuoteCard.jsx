@@ -21,13 +21,10 @@ function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
   return (
     <div
       className='vh-100 d-flex align-items-center justify-content-center'
+      style={cardStyle}
     >
       <div className='container'>
-        <div
-          className='row justify-content-center'
-          style={cardStyle}
-          id='quote-box'
-        >
+        <div className='row justify-content-center' id='quote-box'>
           <Card className='w-75' style={textStyle}>
             <Card.Header className='align-self-center'>
               Random Quote Generator
