@@ -20,7 +20,7 @@ function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
 
   return (
     <div
-      className='vh-100 d-flex align-items-center justify-content-center text-center mx-auto'
+      className='vh-100 d-flex align-items-center justify-content-center mx-auto'
       style={cardStyle}
       id='quote-box' // User Story #1
     >
