@@ -25,7 +25,7 @@ function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
       id='quote-box' // User Story #1
     >
       <Card className='w-75' style={textStyle}>
-        <Card.Header className='align-self-center' id='text'>
+        <Card.Header className='align-self-center'>
           Random Quote Generator
         </Card.Header>
         <Card.Body>
@@ -60,9 +60,15 @@ function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
               variant='outline-light'
               style={cardStyle}
               onClick={tweetQuote}
-              id='tweet-quote' // User Story #5
             >
-              <a href='#' id='tweet-quote'>
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                  quote.content + ' - ' + (quote.author || 'Anonymous')
+                )}`}
+                target='_blank'
+                rel='noopener noreferrer'
+                id='tweet-quote' // User Story #5
+              >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='18'
