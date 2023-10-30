@@ -25,7 +25,7 @@ function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
       id='quote-box' // User Story #1
     >
       <Card className='w-75' style={textStyle}>
-        <Card.Header className='align-self-center'>
+        <Card.Header className='align-self-center' id='text'>
           Random Quote Generator
         </Card.Header>
         <Card.Body>
