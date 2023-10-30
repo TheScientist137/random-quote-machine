@@ -15,31 +15,29 @@ function App () {
   const fetchRandomQuote = async () => {
     try {
       const randomQuote = await getRandomQuote()
-      const randomColor = generateRandomColor()
-
       setQuote(randomQuote)
-      setColor(randomColor)
+      setColor(generateRandomColor())
     } catch (e) {
       console.error('Error fetching random quote', e)
     }
   }
 
   const generateRandomColor = () => {
-    const randomColor = () => {
-      const letters = '0123456789ABCDEF'
-      let color = '#'
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)]
-      }
-      return color
-    }
-
-    const backgroundColor = randomColor()
-    const textColor = backgroundColor
-
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16)
     return {
-      backgroundColor,
-      textColor
+      backgroundColor: randomColor,
+      textColor: randomColor
+    }
+  }
+
+  const tweetQuote = () => {
+    if (quote) {
+      window.open(
+        `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          quote.content + ' - ' + (quote.author || 'Anonymous')
+        )}`,
+        '_blank'
+      )
     }
   }
 
@@ -48,6 +46,7 @@ function App () {
       <QuoteCard
         quote={quote}
         onNewQuote={fetchRandomQuote}
+        onTweet={tweetQuote}
         color={color}
       />
     </div>
