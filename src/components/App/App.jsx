@@ -43,24 +43,12 @@ function App () {
     }
   }
 
-  const tweetQuote = () => {
-    if (quote) {
-      const tweetText = `${quote.content} - ${quote.author || 'Anonymous'}`
-      const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-        tweetText
-      )}`
-
-      window.open(twitterUrl, '_blank')
-    }
-  }
-
   return (
     <div>
       <QuoteCard
         quote={quote}
         onNewQuote={fetchRandomQuote}
         color={color}
-        onTweet={tweetQuote}
       />
     </div>
   )

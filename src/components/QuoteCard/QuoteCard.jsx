@@ -3,19 +3,13 @@ import Card from 'react-bootstrap/Card'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 
-function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
+function QuoteCard ({ quote, onNewQuote, color }) {
   const cardStyle = {
     backgroundColor: color.backgroundColor
   }
 
   const textStyle = {
     color: color.textColor
-  }
-
-  const tweetQuote = () => {
-    if (onTweet) {
-      onTweet()
-    }
   }
 
   return (
@@ -59,10 +53,14 @@ function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
               className='me-4 rounded-3 border-0'
               variant='outline-light'
               style={cardStyle}
-              onClick={tweetQuote}
             >
               <a
                 id='tweet-quote' // User Story #5
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                  quote.content + ' - ' + (quote.author || 'Anonymous')
+                )}`}
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
