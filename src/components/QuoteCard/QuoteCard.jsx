@@ -62,11 +62,6 @@ function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
               onClick={tweetQuote}
             >
               <a
-                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                  quote.content + ' - ' + (quote.author || 'Anonymous')
-                )}`}
-                target='_blank'
-                rel='noopener noreferrer'
                 id='tweet-quote' // User Story #5
               >
                 <svg
