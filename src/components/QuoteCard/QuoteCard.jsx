@@ -32,7 +32,7 @@ function QuoteCard ({ quote, onNewQuote, onTweet, color }) {
           <Card.Title>Quote</Card.Title>
           {quote && (
             <blockquote className='blockquote mb-2'>
-              <p className='fs-6'>
+              <p className='fs-6' id='text'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='24'
